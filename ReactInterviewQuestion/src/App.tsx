@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Counter from "./components";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showMessage, setShowMessage] = useState(false);
+  const [showMessage2, setShowMessage2] = useState(false);
+  const handleShowMessage = () => {
+    // Here the doubt was that what will happen if two states will get update will the re-render
+    // happens two times.
 
+    // No, the re-render will happen only one time because this operation is Asynchronous, It will
+    // not update right away, it will wait for all the code to run and then theses operations will run.
+    // and the changes will re-render in one go.
+    setShowMessage((prev) => !prev);
+    setShowMessage2((prev) => !prev);
+  };
+  console.log("Parent rendered");
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Counter</h1>
+      <Counter />
+      <br />
+      {showMessage && <b>Now you see me</b>}
+      {showMessage2 && <b>Now you see me again</b>}
+      <button onClick={handleShowMessage} style={{ marginLeft: "1rem" }}>
+        Show message
+      </button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

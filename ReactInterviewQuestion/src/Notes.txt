@@ -1,0 +1,20 @@
+React rendering process:
+
+1. React is declarative in nature and not imperative.
+    - This means that it does not allow you directly to interact with the DOM.
+    - It uses something called VirtualDOM to interact with the DOM, so our actual DOM don't get 
+      affected multiple times, therefore the performance gets increases.
+
+2. Rendering process can be divided into 2 parts:
+    - Render phase
+        In this phase there are 2 types of renders:
+            1. When are app is just loaded, or our component is loaded for the very first time,
+               i.e. initial render.
+            2. Second time is when the state gets update, a re-render happens of our component at 
+               this time, this is the second type.
+
+        PS: These are the two main causes when rendering happens, and the re-render only triggers
+        by the state changes. Also when a parent component get re-rendered the child present inside
+        also get re-rendered.
+         
+    - Commit phase
