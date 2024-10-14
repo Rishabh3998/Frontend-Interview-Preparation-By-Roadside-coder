@@ -1,0 +1,90 @@
+.div {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.form {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.clickMe {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.div2 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.form2 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.clickMe2 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.div3 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.form3 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.clickMe3 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.div4 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.form4 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.clickMe4 {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+}
+
+.mobile,
+.headphone,
+.laptop,
+.speaker,
+.charger {
+  width: 100px;
+  height: 100px;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
