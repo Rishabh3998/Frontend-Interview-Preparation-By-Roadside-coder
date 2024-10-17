@@ -67,17 +67,15 @@ const Carousel = ({
           ?.slice(0, imgLimit > images?.length ? images?.length : imgLimit)
           ?.map((img, index) => {
             return (
-              <div>
-                <img
-                  onLoad={() => setImgWidth(imageRef?.current?.offsetWidth)}
-                  ref={imageRef}
-                  className="image"
-                  src={img.url}
-                  alt={img.title}
-                  key={img.id}
-                  onClick={() => onImageClick(img, index)}
-                ></img>
-              </div>
+              <img
+                onLoad={() => setImgWidth(imageRef?.current?.offsetWidth)}
+                ref={imageRef}
+                className="image"
+                src={img.url}
+                alt={img.title}
+                key={img.id}
+                onClick={() => onImageClick(img, index)}
+              ></img>
             );
           })}
       </div>
