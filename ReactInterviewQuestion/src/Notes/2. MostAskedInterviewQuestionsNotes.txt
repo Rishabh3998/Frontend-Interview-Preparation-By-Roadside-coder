@@ -1,0 +1,110 @@
+1. What is React and why it is used?
+    -   React is a popular JS library used for building UIs for web applications.
+    -   It is known for its efficiency, flexibility and reusability in creating interactive UI components. 
+    -   React allows developers to build complex UIs by breaking them down into smaller, reusable pieces
+        called components.
+    -   These components can manage their own state, making it easier to build and maintain large scale 
+        applications. 
+
+2. What is JSX and why it is used?
+    -   JSX -> JS XML
+    -   Allows you to write HTML like code with JS.
+    -   JSX is used in React to define the structure of components.
+
+3. What is a React component?
+    -   It is a reusable building block for the UI.
+    -   It can be a class or a function which returns JSX.
+
+4. What is the difference between state and props?
+    -   Mutability: State is mutable and managed within the component itself, while props are 
+        immutable and passed from parent to child components.
+    -   Ownership: Components own and manage their own state, while props are owned and managed by the
+        parent component.
+    -   Usage: State is used for internal component data that might change over time, while props are used 
+        to pass data from parent to child components.
+
+5. What is prop drilling?
+    -   Process of passing down props through multiple levels of nested components.
+    -   Suppose we have 4 components and grandParent component want to pass a props value to the grandChild
+        component, so the value will passed through the parent and child component as well but this value
+        is not needed there, still the components can access this value. So this passing down of props
+        into nested components is known as prop drilling.
+    -   Solution: use a store (Zustand, Redux) or we can use contextAPI of React.
+
+6. What is a React fragment, and why it is used?
+    -   It is a way to group multiple elements without adding an extra HTML element to the DOM.
+
+7. How do you define and use State in a React functional component? How are they difference from normal
+   variables?
+    -   A state is responsible for re-rendering a component, whenever it changes so that's why we don't 
+        use a normal variable because it will not trigger any re-render when it changes.
+
+8. How do you define and use State in a React class component?
+    -   Here is an example:
+    -   class CounterNew extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                count: 0,
+                };
+            }
+
+            incrementCount() {
+                this.setState({ count: this.state.count + 1 });
+            }
+
+            render() {
+                return (
+                <div>
+                    <div>Count: {this.state.count}</div>
+                    <button onClick={() => this.incrementCount()}>Increment</button>
+                </div>
+                );
+            }
+        }
+
+9. How do you pass props to a functional component?
+    -   Just pass like custom={value} inside the parent component.
+    -   Access like this in child component: componentName ({custom})
+
+10. What are propTypes?
+    - This basically defines the type of prop a function is expecting from its parent component.
+    -   child.propTypes = {
+            propExample: PropTypes.string
+        }
+
+11. How do you use props inside class components?
+    -   <DisplayCount count={this.state.count}
+    -   class DisplayCount extends React.Component {
+            render() {
+                return <div>Count: {this.props.propName}</div>;
+            }
+        }
+
+12. In how many ways can we import and export things from JS module? 
+    -   Default Import/Export:
+        -   Use it when you want to export something by default.
+        -   Multiple default exports are not allowed from the same module.
+        -   We can refer to the default exported thing by any name, so the name will not matter 
+            when we import.
+    -   Named Export/Import:
+        -   Use it when you have multiple things to be exported from a JS module.
+        -   Named exports must be referred to by the exact same name while importing them.
+
+13. What is VirtualDOM?
+    -   A logical representation of the actual DOM in the form of the React elements.
+    -   A programming concept where a virtual representation of a UI is kept in the memory. It is an 
+        object that has React elements to represent the UI.
+
+14. Reconciliation vs Rendering?
+    -   Reconciliation: The process of computing the difference between the 2 VirtualDOMs.
+    -   Rendering: The actual updation of the information in the rendering environment, which happens
+        after Reconciliation process.
+
+15. What is the Diff Algorithm?
+    -   whenever the states or props get updated, an updated VirtualDOM tree is generated.
+    -   Diff algorithm calculates the difference between the 2 VirtualDOMs i.e the previous VirtualDOM
+        and the updated VirtualDOM.
+    -   After calculating this difference only the actual DOM is updated. This makes React capable of 
+        doing fast DOM manipulations.
+    -   Reconciliation + Rendering.

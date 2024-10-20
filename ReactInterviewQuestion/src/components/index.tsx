@@ -6,7 +6,8 @@ const Counter = () => {
 
   const handleIncrement = () => {
     // Here same state is getting updated multiple times with prev value dependency
-    // due to which state will update multiple times on single click.
+    // due to which state will update multiple times on single click. But the re-rendering
+    // will still happens only once because these state changes are async operations.
     setCount((prev) => prev + 1);
     setCount((prev) => prev + 1);
     setCount((prev) => prev + 1);
@@ -16,7 +17,7 @@ const Counter = () => {
     // O/P : 6 (counter value on single click)
 
     // The below code will only update the counter one time cause this one is depended on the
-    // count state.
+    // count state. Re-render will only happens once here and count will only increase by 1.
     // setCount(count + 1);
     // setCount(count + 1);
     // setCount(count + 1);

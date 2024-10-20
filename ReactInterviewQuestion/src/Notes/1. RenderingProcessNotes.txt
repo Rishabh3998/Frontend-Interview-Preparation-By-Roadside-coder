@@ -1,0 +1,70 @@
+React rendering process:
+
+1. React is declarative in nature and not imperative.
+    - This means that it does not allow you directly to interact with the DOM.
+    - It uses something called VirtualDOM to interact with the DOM, so our actual DOM don't get 
+      affected multiple times, therefore the performance gets increases.
+
+2. Rendering process can be divided into 2 parts:
+    - Render phase
+        In this phase there are 2 types of renders:
+            1. When are app is just loaded, or our component is loaded for the very first time,
+               i.e. initial render.
+            2. Second time is when the state gets update, a re-render happens of our component at 
+               this time, this is the second type.
+
+        PS: These are the two main causes when rendering happens, and the re-render only triggers
+        by the state changes. Also when a parent component get re-rendered the child present inside
+        also get re-rendered. But if a child component gets re-rendered no parent will be re-rendered.
+
+    Initial rendering process (Render phase):
+    1. JSX converts to react understandable language by babel as the transpiler.
+    2. A virtual DOM/Fake DOM/Dummy DOM tree gets created.
+
+    PS: VirtualDOM helps to enhance the performance of our app.
+         
+    - Commit phase
+
+    To understand this phase we need to first understand about state update rendering process:
+    1. In this process whenever a state changes a completely new VirtualDOM get created.
+    2. Now React has to figure out which component in this new VirtualDOM tree has to re-render
+       or the node which has to change so that it can only update that particular node and provide
+       the changes to the actual DOM. 
+    3. It compares both of the VirtualDOM trees old and new via Diffing algorithm and after the
+       changes gets done it commit those into the actual DOM tree.
+
+       The whole process of Diffing and commit-ing is known as Reconciliation. Reconciliation is 
+       process that occurs between 2 phases of rendering. Reconciliation use this Diffing algo.
+
+    PS: When we use a variable then on every re-render the value of a variable gets lost, but 
+        a state always persist across the re-renders.
+
+    When the change happens inside the actual DOM. We call that phase the commit phase.
+
+3. Why can;t we manipulate the actual DOM directly? why do we need this VirtualDOM?
+
+   - Updating the actual DOM is a very expensive process and it can lead to performance shortcomings.
+     But generating a plain JS object i.e. a virtual DOM is easy.
+
+4. What will happen when there will be millions of comparisons between millions of trees in VirtualDOM?
+ 
+   - Here comes the optimizations in the Diffing algo, one of the things that react does with Diffing
+     algo is that it makes assumptions. So React assumes if a particular tag is changes inside a tree
+     that means everything inside of it has changed, this is the first assumption.
+
+   - Suppose a div is replaced by span then it will scrap whole tree after the div component and 
+     replace it with span and continue the comparison after this replacement.
+
+5. Benefits of adding key inside a HTML attribute when working with map:
+
+   - This addition of key in an attribute helps in performance optimization.
+   - Suppose we have a list of items where we have 3 items and on the click of a button we can 
+     add a new item at the end of the list. So when we click on the button the Diffing algo will
+     put the new element at the end of the list, but if we try to add the new element on the top
+     of the list the Diffing will scrap the whole list and it will create and entire list with 
+     new element at the top.
+   - Now how a key will help, when diffing algo will replace any element it will find it by key 
+     then it will replace it with the new element and the position where new element will be placed
+     will not matter. Key should always be unique.
+
+After the Diffing algo done with its thing the changes gets done in the actual DOM.

@@ -1,7 +1,9 @@
 function App() {
   const [count, setCount] = React.useState(0);
+  let count1 = 0;
   const increment = () => {
     setCount(count + 1);
+    // count += 1; // This will not work because re-rendering only works if state changes
   };
 
   // using traditional way of creating elements
