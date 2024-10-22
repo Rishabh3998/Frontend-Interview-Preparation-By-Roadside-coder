@@ -1,0 +1,26 @@
+1. Explain state vs props in both class and functional components.
+    -   Props: 
+        -   Read only data passed from a parent component to a child component.
+        -   Immutable and used to communicate between 2 components.
+    -   State:
+        -   Mutable and represents the internal state of component.
+        -   Managed and controlled within the component itself.
+    -   Difference:
+        -   Props are immutable and data passed down from parent components.
+        -   State is mutable and represents the internal state of the component.
+        -   In class components 'this.state' and 'this.props' are used to access props and state.
+        -   In functional components, props are passed as an argument to the component function, and state
+            is managed using hooks like 'useState'.
+
+2. What is a children prop?
+    -   Suppose we create a re-usable component in which we want to manipulate the data which will be 
+        render and this component will only act like a wrapper to the rendered data. To for this requirement
+        we use children prop to render the data.
+    -   const Button = ({children}) => {
+            return (
+                <div>
+                    {children}
+                </div>
+            );
+        };
+    -   <Button>'This string will act like a children for this button component'</Button>

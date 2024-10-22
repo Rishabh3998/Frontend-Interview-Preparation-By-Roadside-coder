@@ -1,0 +1,24 @@
+1. What are Smart / Stateful / Container components?
+    -   Manages state, handles business logic, and passes data down to presentational components.
+
+2. What are Dumb / Stateless / Presentational components?
+    -   Only renders UI based on the props it receives.
+    -   Doesn't have its own state or lifecycle methods.
+
+3. What are Higher order components?
+    -   Function that takes a component and returns a new enhanced component.
+    -   Used for code reuse, logic sharing, and adding additional functionalities to components.
+
+4. What are pure components?
+    -   Optimize the rendering performance of components by reducing unnecessary re-renders.
+    -   In class based components we can use React.PureComponent to make any component a pure.
+    -   In function based components we can wrap our component inside the React.memo(Comp1) which will
+        make our component a pure component and no unnecessary re-rendering will happen in this component
+        if its parent component get re-rendered.
+
+5. What are controlled components?
+    -   Value of the input fields are controlled by React through state.
+
+6. What are un-controlled components?
+    -   Input fields maintain its own state using the DOM.
+    -   React doesn't control the value, but it can still interact with the input using refs.
