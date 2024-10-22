@@ -1,0 +1,44 @@
+We have two types of components in React:
+
+1. Class based components
+2. Function based components
+
+Q1. Explain class based components in React.
+    -   Way to create components using ES6 classes.
+    -   Older way to writing components compared to functional components.
+    -   Can contain state and have access to lifecycle methods, which gets executed at various points 
+        in a component's life cycle.
+
+Q2: Explain constructor and super keywords over here.
+    -   Constructor:
+        -   Initializing state: It's used to initialize the component's state by assigning and initial 
+            value to this.state.
+        -   Binding event handlers or methods: It's also used to bind event handlers or methods to 
+            component instance.
+    -   Super:
+        -   Used inside the constructor to call the constructor of the parent class. This helps us to 
+            call the parent component and use the methods of parent class.
+        -   Ensures that the component's props are correctly initialized and available within the component.
+
+Q3: Explain the component lifecycle methods by adding them to this counter app.
+    -   There are 3 phases in which component lifecycle works 
+        -   Mounting
+            -   When a component is initialized for the very first time.
+            -   Lifecycle method used here: componentDidMount
+        -   Updating
+            -   Lifecycle method used here: componentDidUpdate
+        -   Unmounting
+            -   Lifecycle method used here: componentWillUnmount
+
+Q4: Explain function based components and what are hooks? Explain any 2.
+    -   const PhotoGallery = () => {
+            const [photos, setPhotos] = useState([]); to manage state in a component
+            useEffect(() => {}, []); used to manage side effects like fetching etc
+            return (
+                <div>Gallery</div>
+            );
+        }
+    -   Hooks are functions that allow functional components to use state, lifecycle methods and other 
+        React features previously available only in class components.
+
+Q5: Convert this class based component to function based component and explain it.

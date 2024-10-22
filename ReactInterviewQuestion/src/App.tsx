@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import Counter from "./components";
+import Counter from "./components/Counter";
+import ListRenderUsingMap from "./components/ListRenderUsingMap";
+import CounterClass from "./components/ClassBasedComponents";
 
 function App() {
   const [showMessage, setShowMessage] = useState(false);
@@ -21,6 +23,10 @@ function App() {
       <h1>Counter</h1>
       <Counter />
       <br />
+      <h1>List</h1>
+      <ListRenderUsingMap />
+      <br />
+      <CounterClass />
       {showMessage && <b>Now you see me </b>}
       {showMessage2 && <b>Now you see me again</b>}
       <button onClick={handleShowMessage} style={{ marginLeft: "1rem" }}>

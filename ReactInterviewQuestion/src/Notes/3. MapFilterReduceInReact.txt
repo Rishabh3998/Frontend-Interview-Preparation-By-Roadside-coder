@@ -1,0 +1,12 @@
+1. How does map function works inside React for rendering list? Give example.
+
+    -   Commonly used to iterate through an array and render components dynamically. 
+    -   It allows you to create a new array of React elements based on the original array.
+
+2. How can you filter products with a specific category?
+
+3. How can you render a summary of total prices for products?
+
+4. Add discountedPrice key to all the products with price more than $20 and render it.
+
+5. How can you filter and render unique elements from an array using filter in React?
