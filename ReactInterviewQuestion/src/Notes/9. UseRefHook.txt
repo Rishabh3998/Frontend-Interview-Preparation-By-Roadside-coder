@@ -1,0 +1,21 @@
+1. What is useRef in React?
+    -   It is a hook used to create a mutable reference that persists across renders.
+    -   It returns a mutable object with a .current property.
+
+2. When would you use useRef?
+    -   Accessing DOM elements or managing focus.
+    -   Storing multiple values that persists without causing re-renders.
+    -   Caching values to avoid re-initialization on re-renders.
+
+3. How do you access a DOM element using useRef?
+    -   Each HTML element has ref attribute by default which can help us to access that particular
+        element if we pass a ref variable inside that attribute.
+
+4. Difference between useState and useRef?
+    -   useState:
+        -   Manages state and triggers re-renders when its value changes. When you update it using 
+            setStateValue, the component re-renders, and the updated value is reflected in the UI.
+    -   useRef:
+        -   Holds a mutable value (current) that persists across renders without causing re-renders.
+            When you update it (refValue.current = ...), the component doesn't re-render,
+            but the updated value is stored and accessible across renders.
