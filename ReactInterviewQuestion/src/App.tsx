@@ -5,6 +5,7 @@ import ListRenderUsingMap from "./components/ListRenderUsingMap";
 import CounterClass from "./components/ClassBasedComponents";
 import UseStateHook from "./components/UseStateHook";
 import UseEffectHook from "./components/UseEffectHook";
+import UseContextHook from "./components/UseContextHook";
 
 function App() {
   const [showMessage, setShowMessage] = useState(false);
@@ -37,6 +38,8 @@ function App() {
       <UseStateHook />
       <br />
       <UseEffectHook />
+      <br />
+      <UseContextHook />
     </>
   );
 }

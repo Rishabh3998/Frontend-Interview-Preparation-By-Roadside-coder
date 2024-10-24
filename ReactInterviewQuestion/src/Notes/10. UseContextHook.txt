@@ -1,0 +1,9 @@
+1. What is useContext in React?
+    -   It is used to consume values (like data or functions) from a context created by createContext().
+    -   It allows functional components to access context values without prop drilling.
+    -   In scenarios where passing props through multiple levels of components is impractical.
+
+2. Create an app to change theme in React JS?
+
+3. Can you have multiple contexts in a single component?
+    -   Yes, we can wrap our app with multiple contexts.
