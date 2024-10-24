@@ -1,0 +1,36 @@
+1. What is useState?
+    -   useState is a hook in React that allows functional components to manage state by declaring state 
+        variables and providing a function to update them.
+
+2. Suppose i am increasing a state using setter function by calling it multiple times will the state 
+   also increase multiple times.
+    -   No, the state will not increase multiple times because state change is an async operation and 
+        it will only increase multiple time if we extract the prev value and use that prev to increase the
+        state else it won;t increase multiple times.
+
+3. What is 2 way data binding and how can we achieve it in React?
+    -   It is the concept that allows the synchronization of data between the model (or state) and view in
+        both directions.
+    -   You can achieve it by combining state management with controlled components.
+
+    Example: 2-way binding
+    const [value, setValue] = useState('');
+
+    const handleChange = (e) => {
+        setValue(e.target.value);
+    }
+    .
+    .
+    .
+    .
+    <input value={value} onChange={handleChange} />
+
+4. Build a form containing first name, last name and email. Use only one state to manage all fields.
+    -   We can use an object inside that one state.
+    -   const [state, setState] = useState({
+            firstName: '',
+            lastName: '',
+            email: ''
+        })
+    -   In the handler while updating any field we can copy the key value pairs of prev value and add new
+        key-value pair in last.

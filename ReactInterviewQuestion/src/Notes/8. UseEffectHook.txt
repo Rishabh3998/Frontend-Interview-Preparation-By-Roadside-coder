@@ -1,0 +1,35 @@
+1. What is useEffect in React?
+    -   useEffect is a hook used in functional components to perform side effects after rendering, such as 
+        data fetching, subscriptions, or manual DOM manipulation.
+
+2. Why dependency array is used in useEffect?
+    -   When it is empty the useEffect will only run once when component will mount.
+    -   When the values inside of it change the useEffect will re-run.
+    -   If removed the useEffect will run after every single render.
+    -   Handling dependencies ensures that the effect runs only when necessary and prevents unnecessary 
+        re-execution of the effect, optimize performance and avoiding potential bugs.
+
+3. Example of useEffect for data-fetching?
+    -   Refer UseEffectHook component.
+
+4. Convert major lifecycle methods to useEffect and explain.
+    -   Refer from class and function lifecycle methods.
+
+5. How to perform cleanup in useEffect? Explain with example. 
+    -   You can return a cleanup function inside useEffect, which runs before the effect re-runs
+        or when the component unmounts.
+    -   When the dependencies change the cleanup function will be called as well.
+    -   This is useful for cleaning up subscriptions or event listeners.
+
+6. Explain useLayoutEffect and how it is different from useEffect?
+    -   useEffect:
+        -   Asynchronous: Runs after the render cycle is committed to the screen.
+        -   Good for performance: Does not block the browser from painting changes on the screen.
+
+    -   useLayoutEffect:
+        -   Synchronous: Runs synchronously immediately after the DOM is updated but before the browser
+            paints anything on the screen.
+        -   Potentially blocking: Can potentially cause delays in the rendering process if the operations
+            are heavy.
+        -   use-case: Whenever we need to interact with DOM, when we need to change something before the 
+                      next render cycle happens.

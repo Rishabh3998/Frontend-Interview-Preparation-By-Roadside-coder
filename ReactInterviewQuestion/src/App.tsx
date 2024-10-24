@@ -3,6 +3,8 @@ import "./App.css";
 import Counter from "./components/Counter";
 import ListRenderUsingMap from "./components/ListRenderUsingMap";
 import CounterClass from "./components/ClassBasedComponents";
+import UseStateHook from "./components/UseStateHook";
+import UseEffectHook from "./components/UseEffectHook";
 
 function App() {
   const [showMessage, setShowMessage] = useState(false);
@@ -32,6 +34,9 @@ function App() {
       <button onClick={handleShowMessage} style={{ marginLeft: "1rem" }}>
         Show message
       </button>
+      <UseStateHook />
+      <br />
+      <UseEffectHook />
     </>
   );
 }
