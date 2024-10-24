@@ -1,0 +1,24 @@
+1. What is useMemo in React?
+    -   It is a hook used to memoize the result of a function and cache it, recalculating it only if
+        the dependencies change.
+    -   Returns a memoized value.
+
+2. When should you use useMemo hook?
+    -   When computing a value is expensive or time consuming.
+    -   When we want to prevent unnecessary re-computation of values across re-renders.
+
+3. How useMemo differs from useState?
+    -   useMemo memoizes a computed value and returns the cached value without causing re-renders, while 
+        useState manage state and triggers re-renders when the state changes.
+
+4. What is useCallback in React?
+    -   It is a hook used to memoize a provided callback function, returning the memoized version of the
+        function.
+    -   Returns a memoized callback / function.
+
+5. When should you not use useCallback or useMemo?
+    -   On event handlers or Inline functions.
+    -   Excessive memory consumption. Excessive use of both of these can consume lots of memory, which is 
+        also not good, therefore we should not memoize everything.
+    -   Garbage collection concerns.
+    

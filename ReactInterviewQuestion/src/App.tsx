@@ -6,6 +6,7 @@ import CounterClass from "./components/ClassBasedComponents";
 import UseStateHook from "./components/UseStateHook";
 import UseEffectHook from "./components/UseEffectHook";
 import UseContextHook from "./components/UseContextHook";
+import ShoppingCart from "./components/UseReducerHook/ShoppingCart";
 
 function App() {
   const [showMessage, setShowMessage] = useState(false);
@@ -40,6 +41,8 @@ function App() {
       <UseEffectHook />
       <br />
       <UseContextHook />
+      <br />
+      <ShoppingCart />
     </>
   );
 }

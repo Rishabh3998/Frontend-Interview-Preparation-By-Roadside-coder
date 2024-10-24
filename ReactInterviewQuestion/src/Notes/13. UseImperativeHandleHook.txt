@@ -1,0 +1,2 @@
+1. How do you call a function of child component from parent component?
+    -   Refer to the component
