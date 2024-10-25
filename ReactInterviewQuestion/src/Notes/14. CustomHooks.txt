@@ -1,0 +1,15 @@
+1. What are custom hooks?
+    -   Custom hooks in React are functions that allow you to extract and reuse stateful logic from 
+        components.
+
+2. Why custom hooks?
+    -   Access to React state and lifecycle hooks.
+    -   Avoid prop drilling.
+    -   Preserving states between renders.
+    -   Follow hooks rules.
+
+3. Build a custom hook to manage and update a counter with appropriate functionalities.
+
+4. Build a custom hook to efficiently track and update window dimensions dynamically.
+
+5. Build a custom hook to fetch data from a given URL and handle loading and error states as well.

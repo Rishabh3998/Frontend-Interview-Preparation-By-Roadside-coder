@@ -7,6 +7,8 @@ import UseStateHook from "./components/UseStateHook";
 import UseEffectHook from "./components/UseEffectHook";
 import UseContextHook from "./components/UseContextHook";
 import ShoppingCart from "./components/UseReducerHook/ShoppingCart";
+import CounterCustomHook from "./components/CustomHooks";
+import FetchCustomHook from "./components/CustomHooks/FetchCustomHook";
 
 function App() {
   const [showMessage, setShowMessage] = useState(false);
@@ -43,6 +45,10 @@ function App() {
       <UseContextHook />
       <br />
       <ShoppingCart />
+      <br />
+      <CounterCustomHook />
+      <br />
+      <FetchCustomHook />
     </>
   );
 }
