@@ -13,3 +13,10 @@
 4. Build a custom hook to efficiently track and update window dimensions dynamically.
 
 5. Build a custom hook to fetch data from a given URL and handle loading and error states as well.
+
+6. Build a custom hook that delays updating a value until a specified time has passed after the last
+   change. -> useDebounce
+
+7. Build a custom hook that stores and retrieves data from the browser localStorage.
+
+8. Build a custom hook that observers when an element comes into the viewport.

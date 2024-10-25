@@ -9,6 +9,8 @@ import UseContextHook from "./components/UseContextHook";
 import ShoppingCart from "./components/UseReducerHook/ShoppingCart";
 import CounterCustomHook from "./components/CustomHooks";
 import FetchCustomHook from "./components/CustomHooks/FetchCustomHook";
+import DebounceInput from "./components/CustomHooks/DebounceInput";
+import IntersectionObserver from "./components/IntersectionObserver";
 
 function App() {
   const [showMessage, setShowMessage] = useState(false);
@@ -49,6 +51,10 @@ function App() {
       <CounterCustomHook />
       <br />
       <FetchCustomHook />
+      <br />
+      <DebounceInput />
+      <br />
+      <IntersectionObserver />
     </>
   );
 }
