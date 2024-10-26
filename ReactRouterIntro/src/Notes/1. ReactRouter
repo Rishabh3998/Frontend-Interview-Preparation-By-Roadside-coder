@@ -1,0 +1,9 @@
+1. How we can create multiple page React applications?
+    -   By using React Router DOM
+    -   This external package helps us to do client side routing.
+    -   Generally to create Multi page applications inside a vanilla web app we use anchor <a /> tag 
+        to create routes in an application. Here we can use some other superpowers to do this routing 
+        without loading a new page, In React app basically the pages are rendered dynamically using 
+        components.
+    -   React router intercepts the browser's request and injects the components and content which helps 
+        us in this single page application for faster rendering without page refreshes.
