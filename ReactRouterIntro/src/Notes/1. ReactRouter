@@ -7,3 +7,17 @@
         components.
     -   React router intercepts the browser's request and injects the components and content which helps 
         us in this single page application for faster rendering without page refreshes.
+
+2. Create a login form and onSubmit route them to a different page.
+
+3. Design an error or 404 Not found route.
+
+4. Give the example of a nested route in react router dom.
+
+5. Create a protected route which redirects to a login page
+
+6. How will you design a product page where user selects the spec and shares the link to other user, 
+   it opens exact way as it was for original user? like a shareable link but a simple one For eg: 
+   A shoe page which is a public page and some states can be updated using query params, like if 
+   a shoe of size 7 is shared then if a different user will open that same link the size will be 
+   auto-populate from query params ../../...?size=7
