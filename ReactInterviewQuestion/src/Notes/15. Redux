@@ -1,0 +1,74 @@
+1. What is Redux ?
+    -   React is a state management library often used with React. It helps in managing the application 
+        state in a predictable way by centralizing the state in a single store, enabling easy debugging 
+        and testing.
+
+2. How does Redux state management actually works?
+    -   Here 3 entities works together to read, write, etc the state of our application.
+    -   Store (One common place for all of our application state), 
+        Reducers (These are responsible for directly manipulating and changing the state of
+        our application, it is basically a function that takes our current state and action as args and 
+        returns a new state results), Actions (It is an event that describes something that happened
+        in the application, it tells Reducers what to do and how to manipulate the state).
+    -   For eg: Actions
+        const exampleAction = {
+            type: 'PERFORM_TASK', (What to do)
+            payload: 'Learn Redux' (Data to use)
+        }
+    -   Redux uses a special kind of add on called middleware to let us customize the dispatch function.
+        Redux thunk is a middleware which allows us to write action creator that returns a function instead
+        of an action.
+    -   middleware thunk => export const listProducts = () => async (dispatch) => {
+            dispatch({type: 'PERFORM_TASK'});
+            dispatch({type: 'PERFORM_TASK', payload: 'Learn Redux'});
+        }
+    -   Flow of state management:
+        -   Application calls Actions with a type and payload (optional) => useDispatch
+        -   Actions go to the Reducers with the payload and type.
+        -   Reducers starts to manipulate state in the store.
+        -   useSelector hook is used to get the state from the store inside application.
+
+3. How do you define an action in Redux?
+    -   const exampleAction = {
+            type: 'PERFORM_TASK', (What to do)
+            payload: 'Learn Redux' (Data to use)
+        }
+
+4. What is a Reducer in Redux? Give example.
+    -   const countReducer  = (state = 0, action) => {
+            switch (action.type) {
+                case "INCREMENT:
+                    return state + 1;
+                case "DECREMENT:
+                    return state - 1;
+                default:
+                    return state;
+            }
+        }
+
+5. How do you create a Redux store?
+    -   See store.ts file
+
+6. What is redux-thunk middleware in Redux and how do you apply it?
+    -   Redux thunk allows to write action creators which returns us a function instead of an action.
+    -   export const listNotes = () => async (dispatch, getState) => {
+            try {
+                dispatch({
+                    type: NOTES_LIST_REQUEST
+                })
+
+                const {
+                    userLogin: {useInfo},
+                } = getState();
+            }
+        }
+    -   It gives us the power to do async operations like calling API or another side effects in a 
+        redux application. We can see we are getting a function inside which another function which
+        is async in nature.
+    -   In older version of redux we had to import this middleware and wrap the thunk middleware by
+        using applyMiddleware explicitly. But in new version i.e. redux toolkit this comes in-built.
+
+7. When would you choose Context API over redux and, vice-versa?
+    -   We should use Context API where state management is relatively simple and the application is
+        also very small and simple. 
+    -   We should use Redux in large scale applications where complex state management is needed.
