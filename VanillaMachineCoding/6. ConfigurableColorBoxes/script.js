@@ -70,8 +70,14 @@ submit.addEventListener("click", () => {
     color: colorObj,
     width: widthObj,
   };
+
+  const box = document.createElement("div");
+  box.className = "box";
+  box.style.width = width.value;
+  box.style.backgroundColor = color.value;
+  container.appendChild(box);
+
   boxConfig.push(result);
-  render();
 });
 
 render();
