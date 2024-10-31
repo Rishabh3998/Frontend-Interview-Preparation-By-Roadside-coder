@@ -7,6 +7,7 @@ import Tabs from "./Features/Tabs";
 import Home from "./Home";
 import Carousel from "./Features/Carousel";
 import { useEffect, useState } from "react";
+import InfiniteScroll from "./Features/InfiniteScroll";
 
 function App() {
   const [isLoading, setLoading] = useState(false);
@@ -56,6 +57,7 @@ function App() {
               </div>
             }
           />
+          <Route path="/infinite-scroll" element={<InfiniteScroll />} />
         </Routes>
       </Router>
     </div>

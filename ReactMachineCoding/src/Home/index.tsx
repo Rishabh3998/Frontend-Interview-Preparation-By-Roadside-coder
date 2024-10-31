@@ -9,6 +9,7 @@ const Home = () => {
         <Link to="/holy-grail-layout">2. Holy grail layout</Link>
         <Link to="/tabs">3. Tabs</Link>
         <Link to="/carousel">3. Carousel</Link>
+        <Link to="/infinite-scroll">4. Infinite scroll</Link>
       </div>
     </div>
   );
