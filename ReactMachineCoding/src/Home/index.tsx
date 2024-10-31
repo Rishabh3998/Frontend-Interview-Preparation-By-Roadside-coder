@@ -8,8 +8,9 @@ const Home = () => {
         <Link to="/todo">1. Todo List</Link>
         <Link to="/holy-grail-layout">2. Holy grail layout</Link>
         <Link to="/tabs">3. Tabs</Link>
-        <Link to="/carousel">3. Carousel</Link>
-        <Link to="/infinite-scroll">4. Infinite scroll</Link>
+        <Link to="/carousel">4. Carousel</Link>
+        <Link to="/infinite-scroll">5. Infinite scroll</Link>
+        <Link to="/progress-bar">6. Progress bar</Link>
       </div>
     </div>
   );

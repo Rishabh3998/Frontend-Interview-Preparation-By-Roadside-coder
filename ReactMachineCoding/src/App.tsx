@@ -8,10 +8,13 @@ import Home from "./Home";
 import Carousel from "./Features/Carousel";
 import { useEffect, useState } from "react";
 import InfiniteScroll from "./Features/InfiniteScroll";
+import ProgressBar from "./Features/ProgressBar";
 
 function App() {
   const [isLoading, setLoading] = useState(false);
   const [images, setImages] = useState([]);
+
+  const [progress, setProgress] = useState(0);
 
   const fetchImages = async (imgLimit: number) => {
     setLoading(true);
@@ -30,6 +33,12 @@ function App() {
 
   useEffect(() => {
     fetchImages(8);
+  }, []);
+
+  useEffect(() => {
+    setInterval(() => {
+      setProgress((prev) => prev + 1);
+    }, 100);
   }, []);
 
   return (
@@ -58,6 +67,18 @@ function App() {
             }
           />
           <Route path="/infinite-scroll" element={<InfiniteScroll />} />
+          <Route
+            path="/progress-bar"
+            element={
+              <ProgressBar
+                value={progress}
+                // onComplete={() => {
+                //   alert("Download complete");
+                //   setProgress(0);
+                // }}
+              />
+            }
+          />
         </Routes>
       </Router>
     </div>
