@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import InfiniteScroll from "./Features/InfiniteScroll";
 import ProgressBar from "./Features/ProgressBar";
 import StarRating from "./Features/StarRating";
+import TicTacToe from "./Features/TicTacToe";
 
 function App() {
   const [isLoading, setLoading] = useState(false);
@@ -94,6 +95,7 @@ function App() {
               />
             }
           />
+          <Route path="/tic-tac-toe" element={<TicTacToe boardSize={4} />} />
         </Routes>
       </Router>
     </div>

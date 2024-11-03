@@ -12,6 +12,7 @@ const Home = () => {
         <Link to="/infinite-scroll">5. Infinite scroll</Link>
         <Link to="/progress-bar">6. Progress bar</Link>
         <Link to="/star-rating">7. Star rating</Link>
+        <Link to="/tic-tac-toe">8. Tic Tac Toe</Link>
       </div>
     </div>
   );
