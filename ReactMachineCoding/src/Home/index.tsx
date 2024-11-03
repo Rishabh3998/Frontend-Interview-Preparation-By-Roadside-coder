@@ -11,6 +11,7 @@ const Home = () => {
         <Link to="/carousel">4. Carousel</Link>
         <Link to="/infinite-scroll">5. Infinite scroll</Link>
         <Link to="/progress-bar">6. Progress bar</Link>
+        <Link to="/star-rating">7. Star rating</Link>
       </div>
     </div>
   );

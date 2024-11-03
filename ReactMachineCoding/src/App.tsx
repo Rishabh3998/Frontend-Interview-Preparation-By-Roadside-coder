@@ -9,12 +9,17 @@ import Carousel from "./Features/Carousel";
 import { useEffect, useState } from "react";
 import InfiniteScroll from "./Features/InfiniteScroll";
 import ProgressBar from "./Features/ProgressBar";
+import StarRating from "./Features/StarRating";
 
 function App() {
   const [isLoading, setLoading] = useState(false);
   const [images, setImages] = useState([]);
-
+  const [currentRating, setCurrentRating] = useState(3);
   const [progress, setProgress] = useState(0);
+
+  const handleRatingChange = (newRating: number) => {
+    setCurrentRating(newRating);
+  };
 
   const fetchImages = async (imgLimit: number) => {
     setLoading(true);
@@ -76,6 +81,16 @@ function App() {
                 //   alert("Download complete");
                 //   setProgress(0);
                 // }}
+              />
+            }
+          />
+          <Route
+            path="/star-rating"
+            element={
+              <StarRating
+                size={5}
+                rating={currentRating}
+                onChange={handleRatingChange}
               />
             }
           />
