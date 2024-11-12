@@ -146,3 +146,39 @@
 .reset-button {
   padding: 5px 10px;
 }
+
+.products_pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.single__product {
+  background-color: lightgrey;
+  padding: 1rem;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  padding: 10px;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page-span {
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.page-span:hover {
+  background-color: #333;
+}
+
+.page-active {
+  background-color: #fff;
+  color: #000;
+}

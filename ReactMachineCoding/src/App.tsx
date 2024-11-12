@@ -11,6 +11,7 @@ import InfiniteScroll from "./Features/InfiniteScroll";
 import ProgressBar from "./Features/ProgressBar";
 import StarRating from "./Features/StarRating";
 import TicTacToe from "./Features/TicTacToe";
+import Pagination from "./Features/Pagination";
 
 function App() {
   const [isLoading, setLoading] = useState(false);
@@ -96,6 +97,7 @@ function App() {
             }
           />
           <Route path="/tic-tac-toe" element={<TicTacToe boardSize={4} />} />
+          <Route path="/pagination" element={<Pagination />} />
         </Routes>
       </Router>
     </div>
