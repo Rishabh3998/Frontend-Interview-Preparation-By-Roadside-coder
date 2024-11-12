@@ -76,8 +76,6 @@ const InfiniteScroll = () => {
 
   const { products: allProducts } = productsList;
 
-  console.log({ productsList });
-
   return (
     <div>
       <h1>Infinite scroll</h1>
