@@ -156,8 +156,8 @@ console.log(sumOfNumsCustom);
 
 // 6. Once Polyfill
 function once(func, context) {
-  let ran;
   return function () {
+    let ran;
     if (func) {
       ran = func.apply(context || this, arguments);
       func = null;
