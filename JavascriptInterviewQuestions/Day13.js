@@ -168,13 +168,14 @@ function once(func, context) {
 
 // 7. Memoize polyfill
 function memoize(fn, context) {
-  const res = {};
+  const cache = {};
   return function (...args) {
-    var argsCache = JSON.stringify(args);
-    if (!res[argsCache]) {
-      res[argsCache] = fn.call(context || this, ...args);
+    const key = JSON.stringify(args);
+    if (key in cache) {
+      return cache[key];
     }
-    return res[argsCache];
+    cache[key] = fn.apply(this, args);
+    return cache[key];
   };
 }
 
