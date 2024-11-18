@@ -182,3 +182,17 @@
   background-color: #fff;
   color: #000;
 }
+
+.suggestion__item {
+  list-style: none;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.suggestion__list {
+  background-color: lightgrey;
+  margin: 1rem 0rem;
+  padding: 0rem 0rem;
+  color: #f0f0f0;
+}

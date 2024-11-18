@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./App.css";
 import "./index.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
@@ -12,6 +13,9 @@ import ProgressBar from "./Features/ProgressBar";
 import StarRating from "./Features/StarRating";
 import TicTacToe from "./Features/TicTacToe";
 import Pagination from "./Features/Pagination";
+import AutoComplete from "./Features/AutoComplete";
+
+const staticData = ["apple", "banana", "orange", "grape", "mango"];
 
 function App() {
   const [isLoading, setLoading] = useState(false);
@@ -36,6 +40,17 @@ function App() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const fetchSuggestions = async (query: string) => {
+    const response = await fetch(
+      `https://dummyjson.com/recipes/search?q=${query}`
+    );
+    if (!response.ok) {
+      throw new Error("Response is not fetched");
+    }
+    const result = await response.json();
+    return result.recipes;
   };
 
   useEffect(() => {
@@ -98,6 +113,25 @@ function App() {
           />
           <Route path="/tic-tac-toe" element={<TicTacToe boardSize={4} />} />
           <Route path="/pagination" element={<Pagination />} />
+          <Route
+            path="autocomplete"
+            element={
+              <AutoComplete
+                placeholder={"Enter Recipe "}
+                staticData={staticData}
+                fetchSuggestions={fetchSuggestions}
+                dataKey={"name"}
+                customLoading={<>Loading Recipes.....</>}
+                onSelect={(res: any) => {
+                  console.log(res);
+                }}
+                onChange={() => {}}
+                onBlur={() => {}}
+                onFocus={() => {}}
+                customStyles={{}}
+              />
+            }
+          />
         </Routes>
       </Router>
     </div>

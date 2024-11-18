@@ -14,6 +14,7 @@ const Home = () => {
         <Link to="/star-rating">7. Star rating</Link>
         <Link to="/tic-tac-toe">8. Tic Tac Toe</Link>
         <Link to="/pagination">9. Pagination</Link>
+        <Link to="/autocomplete">10. Auto complete</Link>
       </div>
     </div>
   );
